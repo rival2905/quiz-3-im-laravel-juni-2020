@@ -15,7 +15,7 @@
     </div>
       <!-- /.card-header -->
     <div class="card-body">      
-    @foreach($data as $data)    
+       
         <form action="/artikel/{{$data->id}}" method="POST">
         @csrf
         @method('PUT')
@@ -31,19 +31,26 @@
                 <label for="content">Isi:</label>
                 <textarea id="content" class="form-control"  placeholder="Enter content" name="content">{{$data->content}}</textarea>
             </div>
+           
             <div class="form-group">
-                <label for="content">Tag:</label>
-                
-                <br><input type="checkbox" name="tag[]"  value="Event" /> Event
-                <br><input type="checkbox" name="tag[]"  value="Info" /> Info
-                <br><input type="checkbox" name="tag[]"  value="Web" /> Web
-                <br><input type="checkbox" name="tag[]"  value="PHP" /> PHP
-                <br><input type="checkbox" name="tag[]"  value="Laravel" /> Laravel
-                
+                <label for="category_id">Kategori:</label>
+                <select name="category_id" id="category_id" class="form-control">
+                    @foreach($categories as $key => $category)
+                        @if($category->id == $data->category_id)
+                            <option value="{{$category->id}}" selected> {{$category->name}}</option>
+                        @else
+                            <option value="{{$category->id}}"> {{$category->name}}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tags">Tags:</label>
+                <input type="text" class="form-control" value="{{$data->tag}}" placeholder="Enter Judul" id="tags" name="tags">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-    @endforeach
+  
     </div>
       <!-- /.card-body -->
 </div>    

@@ -34,6 +34,8 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Judul</th>
+                        <th>Category</th>
+
                         <th>Aksi</th>
                     </tr>
                   </thead>
@@ -42,6 +44,8 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Judul</th>
+                        <th>Category</th>
+
                         <th>Aksi</th>
                     </tr>
                   </tfoot>
@@ -51,6 +55,8 @@
                       <td>{{$key+1}}</td>
                       <td>{{$data->name}}</td>
                       <td>{{$data->title}}</td>
+                      <td>{{$data->category->name}}</td>
+
                       <td>
                         <a href="/artikel/{{$data->id}}"><button class="btn btn-sm btn-success"><i class="fas fa-search"></i></button></a>
                         <a href="/artikel/{{$data->id}}/edit"><button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button></a>

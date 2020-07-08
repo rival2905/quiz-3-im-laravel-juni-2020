@@ -24,6 +24,10 @@ class CreateArticlesTable extends Migration
                     ->foreign('user_id')->references('id')->on('users')
                     ->onDelete('cascade')
                     ->onUpdate('cascade')->nullable();
+            $table->integer('category_id')
+                    ->foreign('category_id')->references('id')->on('categories')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade')->nullable();
             $table->timestamps();
         });
     }

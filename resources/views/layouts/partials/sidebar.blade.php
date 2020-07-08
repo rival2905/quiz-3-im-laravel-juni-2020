@@ -23,6 +23,11 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Articles</span></a>
     </li>
+    <li class="nav-item">
+    <a class="nav-link" href="/categories">
+        <i class="fas fa-fw fa-list"></i>
+        <span>Categories</span></a>
+    </li>
 
     
 

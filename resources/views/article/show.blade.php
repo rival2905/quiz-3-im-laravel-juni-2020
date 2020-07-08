@@ -10,7 +10,7 @@
 @section('content')
 
 <div class="card">
-    @foreach($data as $data)  
+      
     <div class="card-header">
         <h3 class="card-title">{{$data->title}}</h3>
             {{$data->slug}}
@@ -21,9 +21,9 @@
         {{$data->content}} 
         <br>&nbsp; 
         <p >
-        @endforeach
-        @foreach($datatag as $dat)
-            <button class="btn btn-sm btn-success">{{$dat}}</button>
+      
+        @foreach($data->tags as $dat)
+            <button class="btn btn-sm btn-success">{{$dat->tag_name}}</button>
         @endforeach
         </p>   
     </div>
