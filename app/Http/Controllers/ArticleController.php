@@ -9,7 +9,7 @@ class ArticleController extends Controller
 {
     public function index(){
         $data = ArticleModel::get_all();
-        return view('article.index', compact('data'));
+        return view('article.index', compact('data'))->with('success');
     }
 
     public function create(){
