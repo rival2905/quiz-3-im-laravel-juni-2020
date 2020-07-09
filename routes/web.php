@@ -33,3 +33,13 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/test-dompdf', function(){
+    $pdf = App::make('dompdf.wrapper');
+    $pdf->loadHTML('<h1>Test</h1>');
+    return $pdf->stream();
+});
+
+route::get('/test-dompdf-2', 'PdfController@test');
+
+route::get('/test-excel', 'PostController@export');
