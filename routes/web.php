@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function(){
-    return View('welcome');
- });
 
 // Route::get('/artikel', 'ArticleController@index');
 // Route::get('/artikel/create', 'ArticleController@create');
@@ -25,6 +22,14 @@ Route::get('/', function(){
 // Route::delete('/artikel/{id}', 'ArticleController@destroy');
 
 // Route::get('/artikel/delete/{id}', 'ArticleController@destroy');
+Auth::routes();
+Route::middleware(['auth'])->group(function () {
+    Route::resource('categories', 'CategoryController');
+    Route::resource('artikel', 'ArticleController');
+    Route::get('/', function(){
+        return View('welcome');
+     });
+    
+});
 
-Route::resource('categories', 'CategoryController');
-Route::resource('artikel', 'ArticleController');
+Route::get('/home', 'HomeController@index')->name('home');
