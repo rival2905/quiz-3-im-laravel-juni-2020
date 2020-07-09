@@ -114,6 +114,7 @@
 
 
   <script src="{{asset('sbadmin2/js/swal.min.js')}}"></script>
+@include('sweetalert::alert')
 
 </body>
 

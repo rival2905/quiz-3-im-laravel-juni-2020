@@ -8,6 +8,8 @@ use App\Category;
 use App\Article;
 use App\Tag;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class ArticleController extends Controller
 {
@@ -51,6 +53,8 @@ class ArticleController extends Controller
             $tag = Tag::firstOrCreate($tagCheck);
             $new_artikel->tags()->attach($tag->id);
         }
+        Alert::success('Success', 'Berhasil menambahkan artikel baru');
+
         return redirect('/artikel');
         
     }
